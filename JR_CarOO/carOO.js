@@ -1,7 +1,7 @@
 // Create a class for vehicle. Each vehicle instance should have the following properties:
 // make, model, year
 
-class myWhips {
+class Whips {
     constructor(make, model, year) {
 
         this.make = make;
@@ -22,7 +22,7 @@ class myWhips {
 }
 
 // extends creates a class that is a child of a class that is declared 
-class theWhip extends myWhips {
+class TheWhip extends Whips {
 
     //Create a class for a car. The Car class should inherit from Vehicle and each car instance should have a property called numWheels which has a value of 4.
     constructor ( make, model, year) {
@@ -34,7 +34,7 @@ class theWhip extends myWhips {
 }
 
 // Create a class for a Motorcycle. This class should inherit from Vehicle and each motorcycle instance should have a property called numWheels which has a value of 2. 
-class leBike extends myWhips {
+class LeBike extends Whips {
     constructor(make, model, year){
         super(make, model, year);
         this.numWheels = 2; 
@@ -48,21 +48,21 @@ class Garage {
     // When you create a garage, vehicles will always be empty; you only need to provide the capacity.
     constructor (capacity) {
         this.whipCollection = [];
-        this.capacity
+        this.capacity = capacity;
     }
 
     //  garage should also have an add method, which attempts to add a vehicle to the array of vehicles. 
-    add(myWhips){
+    add(whip){
 
-        if(!(myWhips instanceof myWhips)) {
+        if(!(whip instanceof Whips)) {
             return "Only my whips are allowed in here!"; 
         }
 
-        if(this.whipCollection.length >= this.capacity){
+        if(this.whipCollection.length >= this.capacity) {
             return "Sorry, we are full.";
         }
 
-        this.whipCollection.push(myWhips);
+        this.whipCollection.push(whip);
         return "My whip was successfully added to the garage.";
 
     }
